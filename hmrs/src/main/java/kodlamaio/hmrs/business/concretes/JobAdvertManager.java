@@ -2,6 +2,7 @@ package kodlamaio.hmrs.business.concretes;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.hmrs.business.abstracts.JobAdvertService;
@@ -18,6 +19,7 @@ public class JobAdvertManager implements JobAdvertService {
 
 	private JobAdvertDao jobAdvertDao;
 	
+	@Autowired
 	public JobAdvertManager(JobAdvertDao jobAdvertDao) {
 		super();
 		this.jobAdvertDao = jobAdvertDao;

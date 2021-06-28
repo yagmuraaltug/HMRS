@@ -39,6 +39,16 @@ public class CvLinkManager implements CvLinkService{
 		this.cvLinkDao.save(cvLink);
 		return new SuccessResult("The link added!");
 	}
+	@Override
+	public Result delete(int id) {
+		this.cvLinkDao.deleteById(id);
+		return new SuccessResult("The link deleted!");
+	}
+	@Override
+	public Result update(CvLink cvLink) {
+		this.cvLinkDao.save(cvLink);
+		return new SuccessResult("The link updated!");
+	}
 
 
 }

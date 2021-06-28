@@ -9,7 +9,9 @@ import kodlamaio.hmrs.entities.concretes.CvJobExperience;
 public interface CvJobExperienceService {
 
 	Result add(CvJobExperience cvJobExperience);
-	Result delete(CvJobExperience cvJobExperience);
+	Result delete(int id);
 	DataResult<List<CvJobExperience>> findByJobSeekerId(int id);
 	DataResult<List<CvJobExperience>> getAllByJobSeeker_idOrderByGraduationDateDesc(int id);
+	Result update(CvJobExperience cvJobExperience);
+
 }

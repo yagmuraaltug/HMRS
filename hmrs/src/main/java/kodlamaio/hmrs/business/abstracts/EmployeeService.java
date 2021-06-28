@@ -8,5 +8,9 @@ import kodlamaio.hmrs.entities.concretes.Employee;
 
 public interface EmployeeService {
            DataResult<List<Employee>> getAll();
+       	   DataResult<Employee> getById(int userId);	
            Result add(Employee employee); 
+           Result delete(int userId); 
+           Result update(Employee employee); 
+
 }

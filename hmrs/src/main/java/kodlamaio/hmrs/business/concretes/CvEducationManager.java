@@ -48,4 +48,16 @@ public class CvEducationManager implements CvEducationService{
 
 	}
 
+	@Override
+	public Result delete(int id) {
+		this.cvEducationDao.deleteById(id);
+		return new SuccessResult("Your cover letter is deleted!");
+	}
+
+	@Override
+	public Result update(CvEducation cvEducation) {
+		this.cvEducationDao.save(cvEducation);
+		return new SuccessResult("Your cover letter is updated!");
+	}
+
 }

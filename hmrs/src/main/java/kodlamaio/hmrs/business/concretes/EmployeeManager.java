@@ -2,6 +2,7 @@ package kodlamaio.hmrs.business.concretes;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,24 @@ public class EmployeeManager implements EmployeeService {
 	public Result add(Employee employee) {
 		this.employeeDao.save(employee);
 		return new SuccessResult("The Employee Added !");
+	}
+
+	@Override
+	public Result delete(int userId) {
+		this.employeeDao.deleteById(userId);
+		return new SuccessResult("The Employee Deleted !");
+	}
+
+	@Override
+	public Result update(Employee employee) {
+		this.employeeDao.save(employee);
+		return new SuccessResult("The Employee Updated !");
+	}
+
+	@Override
+	public DataResult<Employee> getById(int userId) {
+		return new SuccessDataResult<Employee>(this.employeeDao.getByUserId(userId));
+
 	}
 
 }

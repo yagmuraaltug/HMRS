@@ -11,4 +11,7 @@ public interface CvCoverLetterService {
 	DataResult<List<CvCoverLetter>> findByJobSeekerId(int id);
 	DataResult<List<CvCoverLetter>> getAll();
 	Result add(CvCoverLetter cvCoverLetter);
+	Result delete(int id);
+	Result update(CvCoverLetter cvCoverLetter);
+
 }

@@ -11,7 +11,7 @@ import kodlamaio.hmrs.core.utilities.results.DataResult;
 import kodlamaio.hmrs.core.utilities.results.Result;
 import kodlamaio.hmrs.core.utilities.results.SuccessDataResult;
 import kodlamaio.hmrs.core.utilities.results.SuccessResult;
-import kodlamaio.hmrs.dataAccess.CvCoverLetterDao;
+import kodlamaio.hmrs.dataAccess.abstracts.CvCoverLetterDao;
 import kodlamaio.hmrs.entities.concretes.CvCoverLetter;
 
 @Service
@@ -42,6 +42,18 @@ public class CvCoverLetterManager implements CvCoverLetterService{
 	public Result add(CvCoverLetter cvCoverLetter) {
 		this.cvCoverLetterDao.save(cvCoverLetter);
 		return new SuccessResult("Your cover letter is added!");
+	}
+
+	@Override
+	public Result delete(int id) {
+		this.cvCoverLetterDao.deleteById(id);
+		return new SuccessResult("Your cover letter is deleted!");
+	}
+
+	@Override
+	public Result update(CvCoverLetter cvCoverLetter) {
+		this.cvCoverLetterDao.save(cvCoverLetter);
+		return new SuccessResult("Your cover letter is updated!");
 	}
 
 }

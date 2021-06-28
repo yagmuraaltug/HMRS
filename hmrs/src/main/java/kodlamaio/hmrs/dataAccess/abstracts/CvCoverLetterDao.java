@@ -1,4 +1,4 @@
-package kodlamaio.hmrs.dataAccess;
+package kodlamaio.hmrs.dataAccess.abstracts;
 
 import java.util.List;
 

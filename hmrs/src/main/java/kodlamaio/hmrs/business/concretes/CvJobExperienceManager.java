@@ -30,11 +30,7 @@ public class CvJobExperienceManager implements CvJobExperienceService{
 		return new SuccessResult("The job experience added!");
 	}
 
-	@Override
-	public Result delete(CvJobExperience cvJobExperience) {
-		this.cvJobExperienceDao.delete(cvJobExperience);
-		return new SuccessResult("The job experience deleted!");
-	}
+	
 
 	@Override
 	public DataResult<List<CvJobExperience>> findByJobSeekerId(int id) {
@@ -46,6 +42,18 @@ public class CvJobExperienceManager implements CvJobExperienceService{
 	public DataResult<List<CvJobExperience>> getAllByJobSeeker_idOrderByGraduationDateDesc(int id) {
 		return new SuccessDataResult<List<CvJobExperience>>(this.cvJobExperienceDao.getAllByJobSeeker_idOrderByEndDateDesc(id));
 
+	}
+
+	@Override
+	public Result delete(int id) {
+		this.cvJobExperienceDao.deleteById(id);
+		return new SuccessResult("The job experience updated!");
+	}
+
+	@Override
+	public Result update(CvJobExperience cvJobExperience) {
+		this.cvJobExperienceDao.save(cvJobExperience);
+		return new SuccessResult("The job experience updated!");
 	}
 
 }

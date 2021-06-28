@@ -42,4 +42,16 @@ public class CvSkillManager implements CvSkillService{
 		return new SuccessResult("The skill added!");
 	}
 
+	@Override
+	public Result delete(int id) {
+		this.cvSkillDao.deleteById(id);
+		return new SuccessResult("The skill deleted!");
+	}
+
+	@Override
+	public Result update(CvSkill cvSkill) {
+		this.cvSkillDao.save(cvSkill);
+		return new SuccessResult("The skill updated!");
+	}
+
 }

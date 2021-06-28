@@ -43,4 +43,16 @@ public class JobSeekerManager implements JobSeekerService {
 
 	}
 
+	@Override
+	public Result delete(int id) {
+		   this.jobSeekerDao.deleteById(id);
+	          return new SuccessResult("The job seeker deleted!");
+	}
+
+	@Override
+	public Result update(JobSeeker jobSeeker) {
+		   this.jobSeekerDao.save(jobSeeker);
+	          return new SuccessResult("The job seeker updated!");
+	}
+
 }

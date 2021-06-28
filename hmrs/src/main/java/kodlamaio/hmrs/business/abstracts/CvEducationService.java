@@ -11,5 +11,7 @@ public interface CvEducationService {
 	DataResult<List<CvEducation>>  findByJobSeekerId(int id);
     Result add(CvEducation cvEducation);
     DataResult<List<CvEducation>> getAllByJobSeeker_idOrderByGraduationDateDesc(int id);
+    Result delete(int id);
+    Result update(CvEducation cvEducation);
 
 }

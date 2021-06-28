@@ -11,5 +11,7 @@ public interface CvLanguageService {
 	DataResult<List<CvLanguage>> findByJobSeekerId(int id);
 	DataResult<List<CvLanguage>> getAll();
 	Result add(CvLanguage cvLanguage);
+	Result update(CvLanguage cvLanguage);
+	Result delete(int id);
 
 }

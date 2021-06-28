@@ -40,4 +40,16 @@ public class CvLanguageManager implements CvLanguageService{
 		return new SuccessResult("The language added!");
 	}
 
+	@Override
+	public Result update(CvLanguage cvLanguage) {
+		this.cvLanguageDao.save(cvLanguage);
+		return new SuccessResult("The language updated!");
+	}
+
+	@Override
+	public Result delete(int id) {
+		this.cvLanguageDao.deleteById(id);
+		return new SuccessResult("The language deleted!");
+	}
+
 }

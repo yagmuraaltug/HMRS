@@ -10,6 +10,8 @@ public interface CvLinkService {
 	DataResult<List<CvLink>> findByJobSeekerId(int id);
 	DataResult<List<CvLink>> getAll();
 	Result add(CvLink cvLink);
+	Result delete(int id);
+	Result update(CvLink cvLink);
 
 
 }

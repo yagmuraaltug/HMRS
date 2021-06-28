@@ -51,4 +51,16 @@ public class CvImageManager implements CvImageService{
 
 	}
 
+	@Override
+	public Result update(CvImage cvImage) {
+		this.cvImageDao.save(cvImage);
+		return new SuccessResult("Image updated");
+	}
+
+	@Override
+	public Result delete(int id) {
+		this.cvImageDao.deleteById(id);
+		return new SuccessResult("Image deleted");
+	}
+
 }

@@ -12,4 +12,6 @@ public interface CvImageService {
 	DataResult<List<CvImage>>  findByJobSeekerId(int id);
 	DataResult<List<CvImage>> getAll();
     Result add(CvImage cvImage,  MultipartFile imageFile);
+    Result update(CvImage cvImage);
+	Result delete(int id);
 }

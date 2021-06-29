@@ -2,7 +2,12 @@ package kodlamaio.hmrs.api.controllers;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+import javax.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -66,6 +71,37 @@ public class JobAdvertsController {
 	    public Result changeStatus(int id) {
 	        return this.jobAdvertService.changeStatus(id);
 	    }
+	    
+		@PutMapping("/update")
+		public ResponseEntity<?> update(@Valid @RequestBody JobAdvert jobAdvert){
+			return ResponseEntity.ok(this.jobAdvertService.update(jobAdvert));
+		}
 		
+		@DeleteMapping("/delete")
+		public ResponseEntity<?> delete(@RequestParam int id){
+			return ResponseEntity.ok(this.jobAdvertService.delete(id));
+		}
+		
+		@PostMapping("/updateconfirmStatus")
+		@Transactional
+		public Result updateconfirmStatus(@RequestParam int id) {
+			return this.jobAdvertService.updateconfirmStatus(id);
+		}
+		
+		@GetMapping("/getConfirmStatusFalse")
+		public ResponseEntity<?> getConfirmStatusFalse(){
+			return ResponseEntity.ok(this.jobAdvertService.getByConfirmStatusFalse());
+		}
+		
+		@GetMapping("/getAllByCompanyId")
+		public DataResult<List<JobAdvert>> getAllByCompanyId(@RequestParam int userId){
+			return this.jobAdvertService.getAllByCompanyId(userId);
+		}
+		
+		
+		@GetMapping("/getAllByCityId")
+		public DataResult<List<JobAdvert>> getAllByCityId(@RequestParam int cityId){
+			return this.jobAdvertService.findJobsByCityId(cityId);
+		}
 
 }

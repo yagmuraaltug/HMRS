@@ -50,8 +50,8 @@ public class JobAdvert {
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "confirm_status", nullable = false)
-	private Boolean confirmStatus;
+	@Column(name = "confirm_status", columnDefinition = "boolean default false")
+	private Boolean confirmStatus =false;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")

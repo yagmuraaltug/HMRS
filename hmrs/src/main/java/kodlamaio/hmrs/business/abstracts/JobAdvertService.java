@@ -26,4 +26,11 @@ public interface JobAdvertService {
 
 	DataResult<JobAdvert> getById(int id);
 
+	DataResult<List<JobAdvert>> getAllByCompanyId(int userId);
+	
+	DataResult<List<JobAdvert>> findJobsByCityId(int cityId);
+
+	Result updateconfirmStatus(int id);
+	
+	DataResult<List<JobAdvert>>getByConfirmStatusFalse();
 }

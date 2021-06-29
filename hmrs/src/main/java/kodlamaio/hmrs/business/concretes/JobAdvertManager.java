@@ -108,6 +108,29 @@ public class JobAdvertManager implements JobAdvertService {
 
 	}
 
+	@Override
+	public DataResult<List<JobAdvert>> getAllByCompanyId(int userId) {
+		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.findByEmployer_UserId(userId));
+
+	}
+
+	@Override
+	public Result updateconfirmStatus(int id) {
+		this.jobAdvertDao.updateconfirmStatus(id);
+		return new SuccessResult("The job advertisement has been confirmed.");
+	}
+
+	@Override
+	public DataResult<List<JobAdvert>> getByConfirmStatusFalse() {
+		return new SuccessDataResult<List<JobAdvert>>(jobAdvertDao.getByConfirmStatusFalse());
+	}
+
+	@Override
+	public DataResult<List<JobAdvert>> findJobsByCityId(int cityId) {
+		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.findJobByCity_CityId(cityId));
+
+	}
+
 
 
 

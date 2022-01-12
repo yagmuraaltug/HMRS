@@ -25,7 +25,7 @@ import kodlamaio.hmrs.entities.concretes.City;
 @CrossOrigin
 public class CitiesController {
 
-	private CityService cityService;
+	private City cityService;
 
 	@Autowired
 	public CitiesController(CityService cityService) {

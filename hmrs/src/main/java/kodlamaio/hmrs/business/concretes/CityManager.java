@@ -42,7 +42,7 @@ public class CityManager implements CityService{
 		Result result=BusinessRules.run(cityNameExists(city));
 		if (result.isSuccess()) {
 			this.cityDao.save(city);
-			return new SuccessResult("City added!");
+			return new SuccessResult("City added! New");
 		}
 		return result;
 	}

@@ -37,7 +37,7 @@ public class CvEducationManager implements CvEducationService{
 	public Result add(CvEducation cvEducation) {
 		var result = this.cvEducationDao.save(cvEducation);
 		if(result != null) {
-			return new SuccessResult("Educational informations and testing infos are added to your CV");
+			return new SuccessResult("Educational informations are added to your CV");
 		}
 		return new ErrorResult("Sorry there is a problem please check your answers.");
 	}

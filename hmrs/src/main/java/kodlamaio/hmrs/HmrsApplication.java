@@ -21,7 +21,7 @@ public class HmrsApplication {
 	    public Docket api() { 
 	        return new Docket(DocumentationType.SWAGGER_2)  
 	          .select()                                  
-	          .apis(RequestHandlerSelectors.basePackage("testing.hmrs"))                                  
+	          .apis(RequestHandlerSelectors.basePackage("kodlamaio.hmrs"))                                  
 	          .build();                                           
 	    }
 
